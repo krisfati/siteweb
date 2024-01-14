@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - École Supérieure des Ingénieurs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {display: flex;
+        justify-content: center ;
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 28px;
+            border-radius: 0 0 10px 10px;
+            width: 100%;
+            box-sizing: border-box;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        #ff {
+            width: 120px;
+            height: auto;
+            position: absolute;;
+           left:0%; top:0%;
+        }
+        #cc {
+            width: 120px;
+            height: auto;
+            position: absolute;
+           right:0%; top:0%;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section {
+            width: 30%;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            width: 60%;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .verification {
+            margin-top: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .verification input {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img id="ff" src="logo.png" alt="Logo de l'École1">
+        Bienvenue à l'École Supérieure des Ingénieurs <br>- Formez votre avenir avec excellence- 
+        <img id="cc" src="logo.png" alt="Logo de l'École2">
+    </header>
+
+    <main>
+        <section>
+            <h2>À Propos de l'École</h2>
+            <p>L'École Supérieure des Ingénieurs, nichée au cœur de Rabat, offre un cadre d'apprentissage unique, focalisé sur les domaines du génie logiciel, électrique et des systèmes embarqués. Son engagement envers l'excellence se reflète dans des installations de pointe et des programmes académiques rigoureux, encadrés par un corps professoral d'experts émérites. Les étudiants sont immergés dans un environnement dynamique, propice à l'innovation, avec des opportunités de recherche et des partenariats industriels assurant une préparation complète pour les défis technologiques à venir. L'École Supérieure des Ingénieurs, un creuset d'idées et de talents, façonne une nouvelle génération d'ingénieurs prêts à marquer le monde de leur empreinte.</p>
+        </section>
+
+        <form id="inscriptionForm">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" >
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" >
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" >
+
+            <label for="dateBac">Date d'obtention du Bac :</label>
+            <input type="date" id="dateBac" name="dateBac">
+
+            <label for="dernierDiplome">Dernier Diplôme Obtenu :</label>
+            <input type="text" id="dernierDiplome" name="dernierDiplome" >
+
+            <label for="formation">Formation :</label>
+            <select id="formation" name="formation">
+                <option value="genie_logiciel">Génie Logiciel</option>
+                <option value="ingenierie_electrique">Ingénierie Électrique</option>
+                <option value="systemes_embarques">Systèmes Embarqués</option>
+            </select>
+
+            <button type="submit">S'inscrire</button>
+
+            <div class="verification">
+                <input type="checkbox" id="humanVerification" >
+                <label for="humanVerification">Je suis humain</label>
+            </div>
+        </form>
+
+        <section>
+            <h2>Nos Formations</h2>
+            <ul>
+                <li>Génie Logiciel</li>
+                <li>Ingénierie Électrique</li>
+                <li>Systèmes Embarqués</li>
+            </ul>
+            <img scr="popa.png"><br>
+            <img scr="pap.png"><br>
+            <img src="download.jpg">
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("inscriptionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var nom = document.getElementById("nom").value;
+            var prenom = document.getElementById("prenom").value;
+            var email = document.getElementById("email").value;
+            var dateBac = document.getElementById("dateBac").value;
+            var dernierDiplome = document.getElementById("dernierDiplome").value;
+            var formation = document.getElementById("formation").value;
+            var humanVerification = document.getElementById("humanVerification").checked;
+
+           
+            if (humanVerification) {
+               
+                console.log("Inscription submitted:", { nom, prenom, email, dateBac, dernierDiplome, formation });
+            } else {
+                alert("Veuillez confirmer que vous êtes humain.");
+            }
+        });
+    </script>
+</body>
+</html>
